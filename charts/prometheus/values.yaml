@@ -29,14 +29,14 @@ kube-prometheus-stack:
       ruleSelectorNilUsesHelmValues: false
       serviceMonitorSelectorNilUsesHelmValues: false
       podMonitorSelectorNilUsesHelmValues: false
-      storageSpec:
-        volumeClaimTemplate:
-          spec:
-            storageClassName: gp2
-            accessModes: ["ReadWriteOnce"]
-            resources:
-              requests:
-                storage: 20Gi
+      # storageSpec:
+      #   volumeClaimTemplate:
+      #     spec:
+      #       storageClassName: gp2
+      #       accessModes: ["ReadWriteOnce"]
+      #       resources:
+      #         requests:
+      #           storage: 20Gi
     thanosIngress:
       enabled: true
       ingressClassName: nginx
@@ -61,11 +61,11 @@ prometheus-pushgateway:
 thanos:
   enabled: true
   existingObjstoreSecret: thanos-storage-config
-  compactor:
-    persistence:
-      size: 100Gi
-    enabled: true
-    retentionResolution5m: 90d
+  # compactor:
+  #   persistence:
+  #     size: 100Gi
+  #   enabled: true
+  #   retentionResolution5m: 90d
   query:
     enabled: false
   queryFrontend:

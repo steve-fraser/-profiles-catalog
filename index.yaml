@@ -12,7 +12,7 @@ entries:
       weave.works/operator: "true"
       weave.works/profile: prometheus
     apiVersion: v2
-    created: "2022-10-09T15:35:43.641335357Z"
+    created: "2022-10-09T15:38:34.018950715Z"
     dependencies:
     - condition: kube-prometheus-stack.enabled
       name: kube-prometheus-stack
@@ -29,9 +29,9 @@ entries:
     - condition: thanos.enabled
       name: thanos-bucket-config
       repository: file://../thanos-bucket-config
-      version: 0.0.5
+      version: 0.0.6
     description: A Weaveworks Helm chart for observability
-    digest: b7db7dfa29e5040a083fabcb851579e1523bbbc7708b23591c0b4f098bfa8a7f
+    digest: 55911b0efb5726c49478d9ff736c10b4e292ff207e38fd9d4fa076b01d71cf80
     home: https://github.com/weaveworks/profiles-catalog
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -49,8 +49,8 @@ entries:
     - https://github.com/prometheus-operator/kube-prometheus
     type: application
     urls:
-    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.9/prometheus-0.0.9.tgz
-    version: 0.0.9
+    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.10/prometheus-0.0.10.tgz
+    version: 0.0.10
   thanos-bucket-config:
   - annotations:
       weave.works/category: Observability
@@ -60,9 +60,9 @@ entries:
         - "gke"
         - "kind"
     apiVersion: v2
-    created: "2022-10-09T15:35:43.925065399Z"
+    created: "2022-10-09T15:38:34.129268588Z"
     description: A Weaveworks Helm chart for thanos bucket configurations
-    digest: f4e27417cd848996eeae75d3c6eb5e5fe70331653b9f7e8f0ad699f80860597c
+    digest: 87ae1d9f61c0a995cc0ddaac15c3ad2d1e3da1d29e9129df97929f6751e09e65
     home: https://github.com/weaveworks/profiles-catalog
     icon: https://raw.githubusercontent.com/thanos-bucket-config/thanos-bucket-config.github.io/master/assets/thanos-bucket-config_logo-cb55bb5c346.png
     keywords:
@@ -75,6 +75,6 @@ entries:
     name: thanos-bucket-config
     type: application
     urls:
-    - https://github.com/steve-fraser/profiles-catalog/releases/download/thanos-bucket-config-0.0.5/thanos-bucket-config-0.0.5.tgz
-    version: 0.0.5
-generated: "2022-10-09T15:35:43.9250799Z"
+    - https://github.com/steve-fraser/profiles-catalog/releases/download/thanos-bucket-config-0.0.6/thanos-bucket-config-0.0.6.tgz
+    version: 0.0.6
+generated: "2022-10-09T15:38:34.129274588Z"

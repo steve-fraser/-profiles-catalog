@@ -1,0 +1,80 @@
+apiVersion: v1
+entries:
+  prometheus:
+  - annotations:
+      weave.works/category: Observability
+      weave.works/layer: layer-1
+      weave.works/links: |
+        - name: Chart Sources
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      weave.works/operator: "true"
+      weave.works/profile: prometheus
+    apiVersion: v2
+    created: "2022-10-09T12:49:03.228895213Z"
+    dependencies:
+    - condition: kube-prometheus-stack.enabled
+      name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 36.0.3
+    - condition: prometheus-pushgateway.enabled
+      name: prometheus-pushgateway
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 1.18.2
+    - condition: thanos.enabled
+      name: thanos
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.8
+    - condition: thanos.enabled
+      name: thanos-bucket-config
+      repository: file://../thanos-bucket-config
+      version: 0.0.2
+    description: A Weaveworks Helm chart for observability
+    digest: 9bc044164ca847fa11bddeb5dc7036efcd8a3fcc0c2200c5cfbed8ff9adfd81c
+    home: https://github.com/weaveworks/profiles-catalog
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    - observability
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: support@weave.works
+      name: Weaveworks
+    name: prometheus
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    type: application
+    urls:
+    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.3/prometheus-0.0.3.tgz
+    version: 0.0.3
+  thanos-bucket-config:
+  - annotations:
+      weave.works/category: Observability
+      weave.works/layer: layer-0
+      weave.works/operator: "true"
+      weave.works/profile-ci: |
+        - "gke"
+        - "kind"
+    apiVersion: v2
+    created: "2022-10-09T12:49:03.397246197Z"
+    description: A Weaveworks Helm chart for thanos bucket configurations
+    digest: 6aa27c3649b50c6632e969655a0b70d039144e38d8536e54d392b76a9114747a
+    home: https://github.com/weaveworks/profiles-catalog
+    icon: https://raw.githubusercontent.com/thanos-bucket-config/thanos-bucket-config.github.io/master/assets/thanos-bucket-config_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - thanos-bucket-config
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: support@weave.works
+      name: Weaveworks
+    name: thanos-bucket-config
+    type: application
+    urls:
+    - https://github.com/steve-fraser/profiles-catalog/releases/download/thanos-bucket-config-0.0.2/thanos-bucket-config-0.0.2.tgz
+    version: 0.0.2
+generated: "2022-10-09T12:49:03.398051407Z"

@@ -61,10 +61,10 @@ prometheus-pushgateway:
 thanos:
   enabled: true
   existingObjstoreSecret: thanos-storage-config
-  # compactor:
+  compactor:
   #   persistence:
   #     size: 100Gi
-  #   enabled: true
+    enabled: true
   #   retentionResolution5m: 90d
   query:
     enabled: false

@@ -12,7 +12,7 @@ entries:
       weave.works/operator: "true"
       weave.works/profile: prometheus
     apiVersion: v2
-    created: "2022-10-09T14:00:03.965196721Z"
+    created: "2022-10-09T15:35:43.641335357Z"
     dependencies:
     - condition: kube-prometheus-stack.enabled
       name: kube-prometheus-stack
@@ -29,9 +29,9 @@ entries:
     - condition: thanos.enabled
       name: thanos-bucket-config
       repository: file://../thanos-bucket-config
-      version: 0.0.3
+      version: 0.0.5
     description: A Weaveworks Helm chart for observability
-    digest: 73b43a4888e841ca330c37228a1bae4283d8ac2f0d8bb3e64f91a642165e1e40
+    digest: b7db7dfa29e5040a083fabcb851579e1523bbbc7708b23591c0b4f098bfa8a7f
     home: https://github.com/weaveworks/profiles-catalog
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -49,6 +49,32 @@ entries:
     - https://github.com/prometheus-operator/kube-prometheus
     type: application
     urls:
-    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.8/prometheus-0.0.8.tgz
-    version: 0.0.8
-generated: "2022-10-09T14:00:03.965213622Z"
+    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.9/prometheus-0.0.9.tgz
+    version: 0.0.9
+  thanos-bucket-config:
+  - annotations:
+      weave.works/category: Observability
+      weave.works/layer: layer-0
+      weave.works/operator: "true"
+      weave.works/profile-ci: |
+        - "gke"
+        - "kind"
+    apiVersion: v2
+    created: "2022-10-09T15:35:43.925065399Z"
+    description: A Weaveworks Helm chart for thanos bucket configurations
+    digest: f4e27417cd848996eeae75d3c6eb5e5fe70331653b9f7e8f0ad699f80860597c
+    home: https://github.com/weaveworks/profiles-catalog
+    icon: https://raw.githubusercontent.com/thanos-bucket-config/thanos-bucket-config.github.io/master/assets/thanos-bucket-config_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - thanos-bucket-config
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: support@weave.works
+      name: Weaveworks
+    name: thanos-bucket-config
+    type: application
+    urls:
+    - https://github.com/steve-fraser/profiles-catalog/releases/download/thanos-bucket-config-0.0.5/thanos-bucket-config-0.0.5.tgz
+    version: 0.0.5
+generated: "2022-10-09T15:35:43.9250799Z"

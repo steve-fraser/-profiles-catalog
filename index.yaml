@@ -12,7 +12,7 @@ entries:
       weave.works/operator: "true"
       weave.works/profile: prometheus
     apiVersion: v2
-    created: "2022-10-09T13:48:52.677519946Z"
+    created: "2022-10-09T14:00:03.965196721Z"
     dependencies:
     - condition: kube-prometheus-stack.enabled
       name: kube-prometheus-stack
@@ -31,7 +31,7 @@ entries:
       repository: file://../thanos-bucket-config
       version: 0.0.3
     description: A Weaveworks Helm chart for observability
-    digest: e5a0e5a96e373c78e4c860d5221a1fc47300e5e937d6a47743791b77dc9ab15d
+    digest: 73b43a4888e841ca330c37228a1bae4283d8ac2f0d8bb3e64f91a642165e1e40
     home: https://github.com/weaveworks/profiles-catalog
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -49,6 +49,6 @@ entries:
     - https://github.com/prometheus-operator/kube-prometheus
     type: application
     urls:
-    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.7/prometheus-0.0.7.tgz
-    version: 0.0.7
-generated: "2022-10-09T13:48:52.677531646Z"
+    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.8/prometheus-0.0.8.tgz
+    version: 0.0.8
+generated: "2022-10-09T14:00:03.965213622Z"

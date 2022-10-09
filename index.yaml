@@ -12,7 +12,7 @@ entries:
       weave.works/operator: "true"
       weave.works/profile: prometheus
     apiVersion: v2
-    created: "2022-10-09T13:30:30.531900179Z"
+    created: "2022-10-09T13:48:52.677519946Z"
     dependencies:
     - condition: kube-prometheus-stack.enabled
       name: kube-prometheus-stack
@@ -31,7 +31,7 @@ entries:
       repository: file://../thanos-bucket-config
       version: 0.0.3
     description: A Weaveworks Helm chart for observability
-    digest: bb50bdd322ee9d44ca8869c69532bba5397253d68c4e6add3e7582deadcd755f
+    digest: e5a0e5a96e373c78e4c860d5221a1fc47300e5e937d6a47743791b77dc9ab15d
     home: https://github.com/weaveworks/profiles-catalog
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -49,32 +49,6 @@ entries:
     - https://github.com/prometheus-operator/kube-prometheus
     type: application
     urls:
-    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.6/prometheus-0.0.6.tgz
-    version: 0.0.6
-  thanos-bucket-config:
-  - annotations:
-      weave.works/category: Observability
-      weave.works/layer: layer-0
-      weave.works/operator: "true"
-      weave.works/profile-ci: |
-        - "gke"
-        - "kind"
-    apiVersion: v2
-    created: "2022-10-09T13:30:30.668256455Z"
-    description: A Weaveworks Helm chart for thanos bucket configurations
-    digest: 789f9be6686cb1fe3850bc577b107c56dbb64e35cbba06ce84c25c1d0784f72d
-    home: https://github.com/weaveworks/profiles-catalog
-    icon: https://raw.githubusercontent.com/thanos-bucket-config/thanos-bucket-config.github.io/master/assets/thanos-bucket-config_logo-cb55bb5c346.png
-    keywords:
-    - operator
-    - thanos-bucket-config
-    kubeVersion: '>=1.16.0-0'
-    maintainers:
-    - email: support@weave.works
-      name: Weaveworks
-    name: thanos-bucket-config
-    type: application
-    urls:
-    - https://github.com/steve-fraser/profiles-catalog/releases/download/thanos-bucket-config-0.0.4/thanos-bucket-config-0.0.4.tgz
-    version: 0.0.4
-generated: "2022-10-09T13:30:30.668264255Z"
+    - https://github.com/steve-fraser/profiles-catalog/releases/download/prometheus-0.0.7/prometheus-0.0.7.tgz
+    version: 0.0.7
+generated: "2022-10-09T13:48:52.677531646Z"

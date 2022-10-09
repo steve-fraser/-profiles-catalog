@@ -1,0 +1,78 @@
+kube-prometheus-stack:
+  kubeControllerManager:
+    enabled: false
+  fullnameOverride: weaveworks-prometheus
+  enabled: true
+  defaultRules:
+    rules:
+      kubeApiserverAvailability: false
+      kubeApiserverBurnrate: false
+      kubeApiserverHistogram: false
+      kubeApiserverSlos: false
+      kubeControllerManager: false
+      kubelet: false
+      kubeScheduler: false
+      etcd: false
+  grafana:
+    enabled: false
+  prometheus:
+    prometheusSpec:
+      externalLabels:
+        cluster: '${CLUSTER_NAME}'
+      replicaExternalLabelName: __replica__
+      thanos:
+        objectStorageConfig:
+          key: objstore.yml
+          name: thanos-storage-config
+      retention: 2d
+      retentionSize: "15GB"
+      ruleSelectorNilUsesHelmValues: false
+      serviceMonitorSelectorNilUsesHelmValues: false
+      podMonitorSelectorNilUsesHelmValues: false
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: gp2
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 20Gi
+    thanosIngress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt"
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+      hosts:
+      - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
+      paths:
+      - /
+      pathType: ImplementationSpecific
+      tls:
+      - secretName: thanos-sidecar-tls
+        hosts:
+        - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
+prometheus-pushgateway:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+    namespace: kube-system
+thanos:
+  enabled: true
+  existingObjstoreSecret: thanos-storage-config
+  compactor:
+    persistence:
+      size: 100Gi
+    enabled: true
+    retentionResolution5m: 90d
+  query:
+    enabled: false
+  queryFrontend:
+    enabled: false
+  storegateway:
+    enabled: false
+thanos-bucket-config:
+  clusterName: '${CLUSTER_NAME}'
+  accessKey: test
+  secretKey: test

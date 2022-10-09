@@ -1,0 +1,4 @@
+region: us-west-2
+clusterName: default
+accessKey: test
+secretKey: test

@@ -79,7 +79,7 @@ thanos:
   query:
     enabled: true
     stores: 
-    - dnssrv+_grpc._tcp.weaveworks-prometheus-thanos-discovery.prometheus.svc.cluster.local
+    - dnssrv+_grpc._tcp.weaveworks-prometheus-thanos-discovery
   queryFrontend:
     enabled: true
     ingress:

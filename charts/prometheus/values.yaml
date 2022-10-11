@@ -54,6 +54,8 @@ kube-prometheus-stack:
       - secretName: thanos-sidecar-tls
         hosts:
         - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
+    thanosService:
+      enabled: true
     thanosServiceExternal:
       enabled: false
       annotations:
@@ -76,6 +78,8 @@ thanos:
   #   retentionResolution5m: 90d
   query:
     enabled: true
+    stores: 
+    - dnssrv+_grpc._tcp.weaveworks-prometheus-thanos-discovery.prometheus.svc.cluster.local
   queryFrontend:
     enabled: true
     ingress:

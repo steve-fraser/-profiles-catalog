@@ -65,6 +65,8 @@ prometheus-pushgateway:
     namespace: kube-system
 thanos:
   enabled: true
+  networkPolicy:
+    enabled: true
   existingObjstoreSecret: thanos-storage-config
   compactor:
     persistence:

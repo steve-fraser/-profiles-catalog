@@ -83,15 +83,8 @@ thanos:
         cert-manager.io/cluster-issuer: "letsencrypt-prod"
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         external-dns.alpha.kubernetes.io/hostname: thanos.${CLUSTER_NAME}.stevefraser.dev
-      hosts:
-      - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
-      paths:
-      - /
-      pathType: ImplementationSpecific
-      tls:
-      - secretName: thanos-sidecar-tls
-        hosts:
-        - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
+      hostname: 'thanos.${CLUSTER_NAME}.stevefraser.dev'
+      tls: true
   storegateway:
     enabled: false
 thanos-bucket-config:

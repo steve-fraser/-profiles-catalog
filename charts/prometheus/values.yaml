@@ -44,6 +44,7 @@ kube-prometheus-stack:
         cert-manager.io/cluster-issuer: "letsencrypt-prod"
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+        external-dns.alpha.kubernetes.io/hostname: thanos.${CLUSTER_NAME}.stevefraser.dev
       hosts:
       - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
       paths:
@@ -54,7 +55,7 @@ kube-prometheus-stack:
         hosts:
         - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
     thanosServiceExternal:
-      enabled: true
+      enabled: false
       annotations:
         external-dns.alpha.kubernetes.io/hostname: thanos.${CLUSTER_NAME}.stevefraser.dev
 prometheus-pushgateway:
@@ -72,9 +73,25 @@ thanos:
     enabled: true
   #   retentionResolution5m: 90d
   query:
-    enabled: false
+    enabled: true
   queryFrontend:
-    enabled: false
+    enabled: true
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        external-dns.alpha.kubernetes.io/hostname: thanos.${CLUSTER_NAME}.stevefraser.dev
+      hosts:
+      - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
+      paths:
+      - /
+      pathType: ImplementationSpecific
+      tls:
+      - secretName: thanos-sidecar-tls
+        hosts:
+        - 'thanos.${CLUSTER_NAME}.stevefraser.dev'
   storegateway:
     enabled: false
 thanos-bucket-config:

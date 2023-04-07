@@ -44,7 +44,7 @@ dependencies:
   repository: "https://prometheus-community.github.io/helm-charts"
   condition: prometheus-pushgateway.enabled
 - name: thanos
-  version: "10.3.8"
+  version: "10.5.5"
   condition: thanos.enabled
   repository: "https://charts.bitnami.com/bitnami"
 - name: thanos-bucket-config
